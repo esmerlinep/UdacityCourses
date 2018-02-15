@@ -13,12 +13,15 @@ import com.esmerlinp.udacitycourses.views.adapters.CoursesAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), CatalogInterface.View {
+companion object {
 
+}
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val presenter:CatalogInterface.Presenter = CatalogPresenters(this)
         presenter.getUdaCityCourses()
+
 
     }
 
@@ -26,7 +29,7 @@ class MainActivity : AppCompatActivity(), CatalogInterface.View {
 
         if(response != null){
             reciclador.layoutManager = LinearLayoutManager(this,LinearLayout.VERTICAL,false)
-            reciclador.adapter = CoursesAdapter(response.courses)
+            reciclador.adapter = CoursesAdapter(response.courses, this)
         }
 
     }

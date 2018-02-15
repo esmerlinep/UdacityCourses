@@ -1,5 +1,6 @@
 package com.esmerlinp.udacitycourses.interactors
 
+import android.widget.ImageView
 import com.esmerlinp.udacitycourses.interactors.Entities.CatalogEntity
 import com.esmerlinp.udacitycourses.interactors.api.UdaCityServices
 import com.esmerlinp.udacitycourses.presenters.interfaces.CatalogInterface
@@ -8,6 +9,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+
 
 class CatalogModel(private val presenter:CatalogInterface.Presenter): CatalogInterface.Interactor{
 
@@ -32,4 +34,13 @@ class CatalogModel(private val presenter:CatalogInterface.Presenter): CatalogInt
         })
     }
 
+    override fun downloadImage(url: String, imageView: ImageView) {
+        //val loader: ImageLoader = ImageLoader.getInstance()
+        //loader.displayImage(url,imageView)
+
+      /*  Thread(Runnable{
+
+        }).start()*/
+
+    }
 }

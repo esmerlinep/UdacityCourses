@@ -1,8 +1,10 @@
 package com.esmerlinp.udacitycourses.presenters
 
+import android.widget.ImageView
 import com.esmerlinp.udacitycourses.interactors.CatalogModel
 import com.esmerlinp.udacitycourses.interactors.Entities.CatalogEntity
 import com.esmerlinp.udacitycourses.presenters.interfaces.CatalogInterface
+
 
 class CatalogPresenters(private val view:CatalogInterface.View): CatalogInterface.Presenter {
     private val presenter:CatalogInterface.Interactor
@@ -19,5 +21,9 @@ class CatalogPresenters(private val view:CatalogInterface.View): CatalogInterfac
 
     override fun getUdaCityCourses() {
         presenter.getUdaCityCourses()
+    }
+
+    override fun downloadImage(url: String, imageView: ImageView) {
+        presenter.downloadImage(url,imageView)
     }
 }
